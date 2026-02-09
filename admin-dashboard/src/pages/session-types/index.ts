@@ -1,0 +1,1 @@
+export { SessionTypesPage } from './SessionTypesPage'

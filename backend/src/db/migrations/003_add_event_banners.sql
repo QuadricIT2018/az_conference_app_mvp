@@ -1,0 +1,1 @@
+ALTER TABLE events ADD COLUMN IF NOT EXISTS event_banners JSONB NOT NULL DEFAULT '{}'::jsonb;

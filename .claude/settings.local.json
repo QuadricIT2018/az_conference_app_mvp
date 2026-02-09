@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const bcrypt = require\\(''bcryptjs''\\); bcrypt.compare\\(''password123'', ''$2a$12$LJ3m4ys3Gy3SZj5eGKqQIeFhMxVcKQVPzRBQBq3TgjOFy/bKxHgbG''\\).then\\(r => console.log\\(''Hash matches password123:'', r\\)\\);\")",
+      "Bash(node -e:*)",
+      "Bash(npm run migrate:*)",
+      "Bash(findstr:*)",
+      "Bash(npm ls:*)"
+    ]
+  }
+}
