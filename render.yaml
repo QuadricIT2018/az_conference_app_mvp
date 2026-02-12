@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: conference-backend
+    runtime: node
+    region: singapore
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 24h
+      - key: ADMIN_DASHBOARD_URL
+        sync: false
+      - key: PWA_URL
+        sync: false

@@ -25,7 +25,7 @@ export function MobileLayout() {
         <img
           src={bannerImg}
           alt="Event Banner"
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full object-cover object-center"
         />
       </div>
       <main className="flex-1 pb-16">

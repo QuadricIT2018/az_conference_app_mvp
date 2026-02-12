@@ -23,7 +23,7 @@ function serializeDepartments(selected: string[]): string {
 }
 
 export function ProfilePage() {
-  const { user, logout } = useAuth()
+  const { user } = useAuth()
   const { eventSlug } = useEventSlug()
   const queryClient = useQueryClient()
   const [selectedDepts, setSelectedDepts] = useState<string[]>([])

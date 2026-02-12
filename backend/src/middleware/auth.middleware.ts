@@ -71,7 +71,7 @@ export const authMiddleware = async (
 // Optional auth - doesn't fail if no token, but populates user if valid token exists
 export const optionalAuthMiddleware = async (
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ): Promise<void> => {
   try {

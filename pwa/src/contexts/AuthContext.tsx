@@ -26,26 +26,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    const storedUser = localStorage.getItem('user')
-
-    if (token && storedUser) {
-      setUser(JSON.parse(storedUser))
-      api.get('/auth/me')
-        .then(response => {
-          const userData = response.data.data
-          setUser(userData)
-          localStorage.setItem('user', JSON.stringify(userData))
-        })
-        .catch(() => {
-          localStorage.removeItem('token')
-          localStorage.removeItem('user')
-          setUser(null)
-        })
-        .finally(() => setIsLoading(false))
-    } else {
-      setIsLoading(false)
-    }
+    // Auto-login with static demo user
+    api.get('/auth/me')
+      .then((response: { data: { data: User } }) => {
+        const userData = response.data.data
+        setUser(userData)
+        localStorage.setItem('token', 'static-demo-token')
+        localStorage.setItem('user', JSON.stringify(userData))
+      })
+      .catch(() => {
+        setUser(null)
+      })
+      .finally(() => setIsLoading(false))
   }, [])
 
   const login = async (email: string, password: string) => {

@@ -3,7 +3,7 @@ import cors from 'cors';
 const allowedOrigins = [
   process.env.ADMIN_DASHBOARD_URL || 'http://localhost:5173',
   process.env.PWA_URL || 'http://localhost:5174',
-];
+].filter(Boolean) as string[];
 
 export const corsOptions: cors.CorsOptions = {
   origin: (origin, callback) => {

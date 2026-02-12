@@ -6,7 +6,16 @@
       "Bash(node -e:*)",
       "Bash(npm run migrate:*)",
       "Bash(findstr:*)",
-      "Bash(npm ls:*)"
+      "Bash(npm ls:*)",
+      "Bash(vercel --version:*)",
+      "Bash(npx vercel:*)",
+      "Bash(curl:*)",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiam9obi5kb2VAY29tcGFueS5jb20iLCJkZXBhcnRtZW50IjoiQUxMIiwidGVhbSI6IkZyb250ZW5kIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTc3MDkwNDUxOSwiZXhwIjoxNzcwOTkwOTE5fQ.jWv7mmqbm3gzLoxVwxBke16Sa3PFYe_aO-g1HmigBs4\")",
+      "Bash(ls -la \"c:\\\\Users\\\\PRAVEEN\\\\OneDrive\\\\Desktop\\\\Conference_App\\\\backend\\\\uploads\\\\banners\"\" 2>&1 && echo \"---\" && ls -la \"c:UsersPRAVEENOneDriveDesktopConference_Appbackenduploadsvenue-maps\"\")",
+      "Bash(npm run build:*)",
+      "Bash(npx tsx:*)",
+      "Bash(python3:*)",
+      "Bash(git add:*)"
     ]
   }
 }
