@@ -374,7 +374,7 @@ router.get('/:id/sessions', async (req: Request, res: Response, next: NextFuncti
     const { date } = req.query;
 
     let sql = `SELECT * FROM sessions WHERE event_id = $1`;
-    const params: (string | number)[] = [id];
+    const params: (string | number)[] = [id as string];
 
     if (date) {
       sql += ` AND session_date = $2`;

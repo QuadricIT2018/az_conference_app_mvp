@@ -132,7 +132,7 @@ router.get('/events/:slug/sessions', authMiddleware, async (req: Request, res: R
     const currentTeam = userResult.rows[0]?.team || req.user!.team;
 
     const sessions = await getVisibleSessions({
-      eventSlug: slug,
+      eventSlug: slug as string,
       userId: req.user!.userId,
       department: currentDept,
       team: currentTeam,
@@ -152,7 +152,7 @@ router.get('/events/:slug/dates', authMiddleware, async (req: Request, res: Resp
     const { slug } = req.params;
 
     const dates = await getSessionDates(
-      slug,
+      slug as string,
       req.user!.userId,
       req.user!.department,
       req.user!.team
@@ -170,7 +170,7 @@ router.get('/sessions/:id', authMiddleware, async (req: Request, res: Response, 
     const { id } = req.params;
 
     const session = await getSessionWithVisibilityCheck(
-      parseInt(id),
+      parseInt(id as string),
       req.user!.userId,
       req.user!.department,
       req.user!.team
@@ -294,7 +294,7 @@ router.post('/favourites/:sessionId', authMiddleware, async (req: Request, res: 
 
     // Check if session exists and is accessible
     const session = await getSessionWithVisibilityCheck(
-      parseInt(sessionId),
+      parseInt(sessionId as string),
       req.user!.userId,
       req.user!.department,
       req.user!.team
@@ -311,7 +311,7 @@ router.post('/favourites/:sessionId', authMiddleware, async (req: Request, res: 
       [req.user!.userId, sessionId, session.event_id]
     );
 
-    sendCreated(res, { session_id: parseInt(sessionId), favourited: true });
+    sendCreated(res, { session_id: parseInt(sessionId as string), favourited: true });
   } catch (error) {
     next(error);
   }
